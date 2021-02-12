@@ -68,3 +68,105 @@ rl.on('line', (userInput) => {
     }
     
 })
+
+//file sytem module
+
+/*const fileSystem = require('fs');
+/*create file
+fileSystem.writeFile('nameoffile.text', 'content of file', 
+(err) => {
+    if (err){
+        console.log(err)
+    } else {
+        console.log ('File successfully created')
+    }
+    });
+        fileSystem.readFile('nameoffile.text', 'UTF-8', (err, file) => {
+            if (err){
+                console.log(err) 
+        } else {
+        console.log (file)
+    }
+})
+
+fileSystem.rename('nameoffile.text', 'filename.txt', (err) =>{
+    if (err){
+        console.log(err)
+    } else {
+        console.log("renamed successfully")
+    }
+})
+    
+/*fileSystem.appendFile('filename.txt', '\n New data to add to our file', (err) => {
+    if (err){
+        console.log(err)
+    } else{
+        console.log("successfully updated")
+    }
+})
+//to delete the created file
+/*fileSystem.unlink('fileaname.txt', (err) =>{
+    if (err){
+        console.log(err)
+    } else {
+        console.log successfully deleted
+    }
+})
+
+//working with folders
+
+const folderSystem = require('fs');
+
+folderSystem.mkdir('nameofFolder', (err)=> {
+    if (err){
+        console.log(err)
+    } else {
+        fileSystem.writeFile('./nameofFolder/file.txt', 'data inside the file', 
+        (err) => {
+            if(err){
+                console.log(err)
+            } else{
+                console.log("successfully created a file inside a folder")
+            }
+        })
+    }
+});
+folderSystem.rmdir("FolderName", (err) =>{
+    if (err){
+        console.log(err)
+    } else {
+        console.log('folder deleted')
+    }
+})*/
+
+// deleting a  folder that has files inside it 
+//const fileSystem = require('fs');
+
+/*fileSystem.readdir('nameofFolder', (err, files) =>{
+    if (err){
+        console.log(err)
+    } else {
+        for (let file of files){
+            fileSystem.unlink('./nameofFolder/' + file, (err) => {
+                if (err){
+                    console.log(err)
+                }else {
+                    console.log('files deleted succefully')
+                } 
+            })
+        }
+    }
+})*/
+
+//readable and writeble streams 
+const fileSystem = require('fs');
+//create a readablele stream 
+const zlib = require('zlib')
+const gunzip= zlib.createGunzip()
+const readStream = fileSystem.createReadStream('module3.js.gz');
+const writeStream = fileSystem.createWriteStream('uncompressed.txt')
+
+readStream.pipe(gunzip).pipe(writeStream);
+
+ 
+

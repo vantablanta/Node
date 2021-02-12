@@ -161,12 +161,23 @@ folderSystem.rmdir("FolderName", (err) =>{
 //readable and writeble streams 
 const fileSystem = require('fs');
 //create a readablele stream 
-const zlib = require('zlib')
+/*const zlib = require('zlib')
 const gunzip= zlib.createGunzip()
 const readStream = fileSystem.createReadStream('module3.js.gz');
 const writeStream = fileSystem.createWriteStream('uncompressed.txt')
 
-readStream.pipe(gunzip).pipe(writeStream);
+readStream.pipe(gunzip).pipe(writeStream); */
 
- 
+ const _ = require ('lodash');
+
+let exmaple=  _.fill([1,2,2,3] ,'Banana', 1, 4)
+
+console.log(exmaple)
+
+const express=  require('express');
+const app = express();
+
+app.get('/', (req, res) =>{
+    res.send('Hello')
+})
 

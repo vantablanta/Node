@@ -1,2 +1,0 @@
-content of file
- New data to add to our file
